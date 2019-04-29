@@ -7,8 +7,13 @@ export SUBJECTS_DIR="../data"
 
 if [ -z "$1" ]; then
 
-	echo " ./hippocamp_seg_script <T2 file> <SUbject ID> <Optional Threads count>\n"
-	exit 0
+	echo " ./hippocamp_seg_script <T2 file> <SUbject ID> <Optional Threads count>\n\n
+		
+		subject - file of the subject in data directory\n
+		T2 Scan - is the name of the T2 scan\n
+		Analysis ID - is the ID assigned to this test\n
+		Threads count - (Optional) Number of threads to use with multithreading\n\n"
+	exit 1
 	
 fi
 
@@ -16,26 +21,47 @@ subject=$1
 
 if [ -z "$2" ]; then
 	
-	echo " ./hippocamp_seg_script <T2 file> <SUbject ID> <Optional Threads count>\n"
-	exit 0
+	echo " ./hippocamp_seg_script <T2 file> <SUbject ID> <Optional Threads count>\n\n
+		
+		subject - file of the subject in data directory\n
+		T2 Scan - is the name of the T2 scan\n
+		Analysis ID - is the ID assigned to this test\n
+		Threads count - (Optional) Number of threads to use with multithreading\n\n"
+	exit 1
 	
 fi
-
-ID=$2
+T2Scan=$2
 
 if [ -z "$3" ]; then
+	
+	echo " ./hippocamp_seg_script <T2 file> <SUbject ID> <Optional Threads count>\n\n
+		
+		subject - file of the subject in data directory\n
+		T2 Scan - is the name of the T2 scan\n
+		Analysis ID - is the ID assigned to this test\n
+		Threads count - (Optional) Number of threads to use with multithreading\n\n"
+	exit 1
+	
+fi
+ID=$3
+
+Threads=$4
+if [ -z "$Threads" ]; then
 	
 	echo " Threads count will be set to 4 (default)\n"
 	Threads=4
 	
 fi
 
-Threads=$3
-
-if [ -n "$4" ]; then
+if [ -n "$5" ]; then
 	
-	echo " ./hippocamp_seg_script <T2 file> <SUbject ID> <Optional Threads count>\n"
-	exit 0
+	echo " ./hippocamp_seg_script <T2 file> <SUbject ID> <Optional Threads count>\n\n
+		
+		subject - file of the subject in data directory\n
+		T2 Scan - is the name of the T2 scan\n
+		Analysis ID - is the ID assigned to this test\n
+		Threads count - (Optional) Number of threads to use with multithreading\n\n"
+	exit 1
 	
 fi
 
