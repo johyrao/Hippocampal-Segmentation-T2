@@ -1,0 +1,29 @@
+RAW DATA: /space/md18/3/data/MMILDB/EPIPROJ/EPDTI/Containers/
+FSURF DATA: /space/md18/3/data/MMILDB/EPIPROJ/FSRECONS/
+
+TESTING FOLDER: /space/syn09/1/data/MMILDB/ABALA/Hippocampal_Subfields
+
+
+
+INPUT: partial folder name
+OUTPUT: NONE
+
+
+
+1. go into raw folder
+2. run R function to get series folder
+3. copy dcm from series to temp folder/raw in
+	data
+4. dcm2niix raw
+5. copy FSURF_*/mri folder contents to temp folder
+6. rename t2 nifti
+7. antsRegistration linear transform (rigid + affine) call template = T1.mgz
+8. hippocampal segmentation FS call (one for T1 +T2, other T2 only)
+
+
+ANTS STUFF
+----------
+thisfolder=data/<subj folder>
+template=T2.nii.gz
+t1brain=T1.mgz
+
